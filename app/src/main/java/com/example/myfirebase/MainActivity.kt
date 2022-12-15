@@ -14,17 +14,17 @@ class MainActivity : AppCompatActivity() {
             val email=editTextemail.text.toString()
             val password=editTextpassword.text.toString()
             if (email.isEmpty() ||password.isEmpty()){
-                Toast.makeText(this,"empty",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"ცარიელია!",Toast.LENGTH_SHORT).show()
             }else if(email.length<7 ||password.length<6){
-                    Toast.makeText(this,"invalid input",Toast.LENGTH_SHORT).show()}
+                    Toast.makeText(this,"არასწორი შეყვანა!",Toast.LENGTH_SHORT).show()}
             else{
                 FirebaseAuth.getInstance()
                     .createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(this, "successful", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "წარმატებით შეიქმნა!", Toast.LENGTH_SHORT).show()
                         } else {
-                            Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "დაფიქსირდა შეცდომა!", Toast.LENGTH_SHORT).show()
                         }
                     }
         }
