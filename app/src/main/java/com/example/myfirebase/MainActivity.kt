@@ -28,8 +28,9 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
         }
+            editTextemail.text.clear()
+           editTextpassword.text.clear()
             }
-            editTextemail.text=""
-            editTextpassword.text=""
+      
         }
     }
